@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
   release:
     types: [published]
+      branches:
+        - main
 
 jobs:
   create-release:
@@ -17,8 +19,10 @@ jobs:
       - uses: actions/checkout@v3
       - name: setup node
         uses: actions/setup-node@v3
+        env:
+          shorter-action: short-sample
         with:
-          node-version: 18
+          node-version: 14
       - name: get version
         run: echo "PACKAGE_VERSION=$(node -p "require('./src-tauri/tauri.conf.json').package.version")" >> $GITHUB_ENV
       - name: create release
@@ -90,9 +94,12 @@ jobs:
 
     steps:
       - name: publish release
+        if: steps.create-release.outputs.result == 'success'
         id: publish-release
         uses: actions/github-script@v6
         env:
+          GITHUB_TOKEN: ${{ secrets.PUBLISH_GITHUB_TOKEN }}
+          PUBLISH_RELEASE_KEY: ${{ secrets.PUBLISH_RELEASE_KEY }}
           release_id: ${{ needs.create-release.outputs.release_id }}
         with:
           script: |
