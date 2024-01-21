@@ -23,7 +23,7 @@ declare interface Window {
     notification:{
       requestPermission(): Promise<Permission>;
       isPermissionGranted(): Promise<boolean>;
-      sendNotification(options: string | Options): void;
+      sendNotification(options: string | Options): Promise<void>;
     };
   };
 }
