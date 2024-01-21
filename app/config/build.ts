@@ -1,7 +1,7 @@
 import tauriConfig from "../../src-tauri/tauri.conf.json";
 
 export const getBuildConfig = () => {
-  if (typeof process === "undefined") {
+  if (typeof window === "undefined") {
     throw Error(
       "[Server Config] you are importing a nodejs-only module outside of nodejs",
     );
@@ -11,7 +11,7 @@ export const getBuildConfig = () => {
   const isApp = !!process.env.BUILD_APP;
   const version = "v" + tauriConfig.package.version;
 
-  const commitInfo = (() => {
+  commitInfo = (() => {
     try {
       const childProcess = require("child_process");
       const commitDate: string = childProcess

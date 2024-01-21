@@ -6,7 +6,7 @@ import { LocaleType } from "./index";
 
 const isApp = !!getClientConfig()?.isApp;
 const en: LocaleType = {
-  WIP: "Coming Soon...",
+  WIP: "Coming Soon",
   Error: {
     Unauthorized: isApp
       ? "Invalid API Key, please check it in [Settings](/#/settings) page."
