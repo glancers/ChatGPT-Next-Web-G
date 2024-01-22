@@ -1,4 +1,4 @@
-# Cloudflare Pages Deployment Guide
+# Cloudflare Pages Deployment Guide - Updated
 
 ## How to create a new project
 
@@ -11,11 +11,11 @@ Fork this project on GitHub, then log in to dash.cloudflare.com and go to Pages.
 5. Click "Begin setup".
 6. For "Project name" and "Production branch", use the default values or change them as needed.
 7. In "Build Settings", choose the "Framework presets" option and select "Next.js".
-8. Do not use the default "Build command" due to a node:buffer bug. Instead, use the following command:
+8. Do not use the default "Build command - Updated" due to a node:buffer bug. Instead, use the following command:
    ```
    npx @cloudflare/next-on-pages --experimental-minify
    ```
-9. For "Build output directory", use the default value and do not modify it.
+9. For "Build output directory - Updated", use the default value and do not modify it.
 10. Do not modify "Root Directory".
 11. For "Environment variables", click ">" and then "Add variable". Fill in the following information:
 
