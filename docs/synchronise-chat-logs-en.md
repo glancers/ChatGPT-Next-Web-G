@@ -28,4 +28,4 @@
 
 5. Success!
 
-   ![Great job~!](./images/upstash-7.png)
+   ![Great job! You have successfully synchronized your chat logs with UpStash.!](./images/upstash-7.png)
