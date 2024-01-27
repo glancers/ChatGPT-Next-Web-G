@@ -35,7 +35,7 @@ jobs:
           target_sync_branch: main
           target_repo_token: ${{ secrets.PAT_GITHUB_TOKEN }}
         with:
-          upstream_sync_repo: Yidadaa/ChatGPT-Next-Web
+          upstream_sync_repo: ChatGPTNextWeb/ChatGPT-Next-Web
           upstream_sync_branch: main
           target_sync_branch: main
           target_repo_token: ${{ secrets.GITHUB_TOKEN }} # automatically generated, no need to set
